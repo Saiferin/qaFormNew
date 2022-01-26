@@ -10,8 +10,8 @@ public class someTest extends basicTest{
 
     @Test
     @DisplayName("Проверка заполнения формы студента")
-    public void checkStudentFormTest() {
-        practiceFormPage.openPracticeFormPage();
+    public void checkStudentForm() {
+        practiceFormPage.openFormPage();
         practiceFormPage.fillFirsName(testData.firstName)
                 .fillLastName(testData.lastName)
                 .fillEmail(testData.email)

@@ -6,15 +6,15 @@ import org.junit.jupiter.api.Test;
 
 public class firstTest extends basicTest{
 
-    pageTest practiceFormPage = new pageTest();
+    pageTest pageTest = new pageTest();
 
     private final TestData testData = new TestData();
 
     @Test
     @DisplayName("Проверка заполнения формы студента")
     public void checkStudentFormTest() {
-        practiceFormPage.openPracticeFormPage();
-        practiceFormPage.fillFirsName(testData.firstName)
+        pageTest.openFormPage();
+        pageTest.fillFirsName(testData.firstName)
                 .fillLastName(testData.lastName)
                 .fillEmail(testData.email)
                 .fillUserNumber(testData.number)
@@ -29,7 +29,7 @@ public class firstTest extends basicTest{
                 .clickSubmit();
 
         //Asserts
-        practiceFormPage.assertForm(testData);
+        pageTest.assertForm(testData);
     }
 
 }

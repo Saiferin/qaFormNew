@@ -2,7 +2,6 @@ package severstal_java_first.page;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.DateAndTime;
 import severstal_java_first.TestData;
 
 import java.text.SimpleDateFormat;
@@ -16,6 +15,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class pageTest {
+
     public pageTest() {
     }
 
@@ -33,7 +33,7 @@ public class pageTest {
             cityInput = $("#react-select-4-input"),
             submit = $("#submit");
 
-    public pageTest openPracticeFormPage() {
+    public pageTest openFormPage() {
         open("https://demoqa.com/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
