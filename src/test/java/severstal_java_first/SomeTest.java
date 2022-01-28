@@ -1,11 +1,11 @@
 package severstal_java_first;
 
-import severstal_java_first.page.pageTest;
+import severstal_java_first.page.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class someTest extends basicTest{
-    pageTest practiceFormPage = new pageTest();
+public class SomeTest extends Config {
+    RegistrationPage practiceFormPage = new RegistrationPage();
     private final TestData testData = new TestData();
 
     @Test

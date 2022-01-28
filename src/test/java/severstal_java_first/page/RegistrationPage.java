@@ -14,10 +14,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class pageTest {
-
-    public pageTest() {
-    }
+public class RegistrationPage {
 
     SelenideElement
             firstName = $("#firstName"),
@@ -33,68 +30,68 @@ public class pageTest {
             cityInput = $("#react-select-4-input"),
             submit = $("#submit");
 
-    public pageTest openFormPage() {
+    public RegistrationPage openFormPage() {
         open("https://demoqa.com/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
     }
 
-    public pageTest fillFirsName(String firstName) {
+    public RegistrationPage fillFirsName(String firstName) {
         this.firstName.val(firstName);
         return this;
     }
 
-    public pageTest fillLastName(String lastName) {
+    public RegistrationPage fillLastName(String lastName) {
         this.lastName.val(lastName);
         return this;
     }
 
-    public pageTest fillEmail(String email) {
+    public RegistrationPage fillEmail(String email) {
         this.email.val(email);
         return this;
     }
 
-    public pageTest fillUserNumber(String number) {
+    public RegistrationPage fillUserNumber(String number) {
         userNumber.val(number);
         return this;
     }
 
-    public pageTest selectGender(String genderName) {
+    public RegistrationPage selectGender(String genderName) {
         gender.$(byText(genderName)).click();
         return this;
     }
 
-    public pageTest fillSubject(String subject) {
+    public RegistrationPage fillSubject(String subject) {
         this.subject.val(subject);
         return this;
     }
 
-    public pageTest selectHobbies(List<String> hobbies) {
+    public RegistrationPage selectHobbies(List<String> hobbies) {
         hobbies.forEach(hobby -> this.hobbies.$(byText(hobby)).click());
         return this;
     }
 
-    public pageTest uploadPicture(String filePath) {
+    public RegistrationPage uploadPicture(String filePath) {
         uploadPicture.uploadFromClasspath(filePath);
         return this;
     }
 
-    public pageTest fillCurrentAddress(String Address) {
+    public RegistrationPage fillCurrentAddress(String Address) {
         currentAddress.scrollTo().val(Address);
         return this;
     }
 
-    public pageTest fillState(String State) {
+    public RegistrationPage fillState(String State) {
         stateInput.val(State).pressEnter();
         return this;
     }
 
-    public pageTest fillCity(String City) {
+    public RegistrationPage fillCity(String City) {
         cityInput.val(City).pressEnter();
         return this;
     }
 
-    public pageTest fillDateOfBirth(Date birthDay) {
+    public RegistrationPage fillDateOfBirth(Date birthDay) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(birthDay);
         $("#dateOfBirthInput").click();
@@ -105,12 +102,12 @@ public class pageTest {
         return this;
     }
 
-    public pageTest clickSubmit() {
+    public RegistrationPage clickSubmit() {
         submit.click();
         return this;
     }
 
-    public pageTest assertForm(TestData testData) {
+    public RegistrationPage assertForm(TestData testData) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM,yyyy", Locale.ENGLISH);
         $$x("//div[@class='modal-body']//td[2]").shouldHave(CollectionCondition.exactTexts(
                 testData.firstName + " " + testData.lastName, testData.email,

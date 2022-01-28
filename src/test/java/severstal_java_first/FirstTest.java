@@ -1,20 +1,20 @@
 package severstal_java_first;
 
-import severstal_java_first.page.pageTest;
+import severstal_java_first.page.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class firstTest extends basicTest{
+public class FirstTest extends Config {
 
-    pageTest pageTest = new pageTest();
+    RegistrationPage registrationPage = new RegistrationPage();
 
     private final TestData testData = new TestData();
 
     @Test
     @DisplayName("Проверка заполнения формы студента")
     public void checkStudentFormTest() {
-        pageTest.openFormPage();
-        pageTest.fillFirsName(testData.firstName)
+        registrationPage.openFormPage();
+        registrationPage.fillFirsName(testData.firstName)
                 .fillLastName(testData.lastName)
                 .fillEmail(testData.email)
                 .fillUserNumber(testData.number)
@@ -29,7 +29,7 @@ public class firstTest extends basicTest{
                 .clickSubmit();
 
         //Asserts
-        pageTest.assertForm(testData);
+        registrationPage.assertForm(testData);
     }
 
 }
