@@ -12,18 +12,11 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class Config {
     @BeforeAll
     static void setup() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        String user = System.getProperty("login");
-        String password = System.getProperty("password");
-        String remoteUrl = System.getProperty("remoteUrl");
-        String browser = System.getProperty("browser");
-        String version = System.getProperty("version");
+       SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = String.format("https://%s:%s@%s", user, password, remoteUrl);
-        Configuration.browser = browser;
-        Configuration.browserVersion = version;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
